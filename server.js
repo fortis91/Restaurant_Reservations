@@ -12,19 +12,19 @@ let router = express();
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-router.get('/tables', function (req, res) {
+router.get('/tables', (req, res) => {
     res.sendFile(path.join(__dirname, 'tables.html'));
 });
 
-router.get('/reservations', function (req, res) {
+router.get('/reservations', (req, res) => {
     res.sendFile(path.join(__dirname, 'reservations.html'));
 });
 
-router.post('/api/reservations', function (req, res) {
+router.post('/api/reservations', (req, res) => {
     let reservation = req.body;
 
     console.log(req.body);

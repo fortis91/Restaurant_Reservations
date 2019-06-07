@@ -1,44 +1,36 @@
-var http = require("http");
-var fs = require("fs");
+let http = require('http');
+let fs = require('fs');
+let express = require('express');
+let path = require('path');
 
-// var app = require('./app');
+// let app = require('./app');
 
-var PORT = 8080;
+const PORT = 8080;
 
-var server = http.createServer(handleRequest);
+let app = express();
 
-server.listen(PORT, function () {
-    console.log("Server is listening on PORT: " + PORT);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/tables', function (req, res) {
+    res.sendFile(path.join(__dirname, 'tables.html'));
+});
 
-function handleRequest(request, response) {
-    var path = request.url;
+app.get('/reservations', function (req, res) {
+    res.sendFile(path.join(__dirname, 'reservations.html'));
+});
 
-    switch (path) {
+app.post('/api/reservations', function (req, res) {
+    let reservation = req.body;
 
-        case "/tables":
-            return fs.readFile(__dirname + "/tables.html", function (err, data) {
-                response.writeHead(200, {
-                    "Content-Type": "text/html"
-                });
-                response.end(data);
-            });
+    console.log(req.body);
+    res.json(reservation);
+});
 
-        case "/reservations":
-            return fs.readFile(__dirname + "/reservations.html", function (err, data) {
-                response.writeHead(200, {
-                    "Content-Type": "text/html"
-                });
-                response.end(data);
-            });
-
-        default:
-            return fs.readFile(__dirname + "/index.html", function (err, data) {
-                response.writeHead(200, {
-                    "Content-Type": "text/html"
-                });
-                response.end(data);
-            });
-    }
-}
+app.listen(PORT, () => {
+    console.log('App listening on PORT ' + PORT);
+});

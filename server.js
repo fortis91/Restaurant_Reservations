@@ -7,30 +7,30 @@ let path = require('path');
 
 const PORT = 8080;
 
-let app = express();
+let router = express();
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+router.use(express.urlencoded({ extended: true }));
+router.use(express.json());
 
-app.get('/', function (req, res) {
+router.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/tables', function (req, res) {
+router.get('/tables', function (req, res) {
     res.sendFile(path.join(__dirname, 'tables.html'));
 });
 
-app.get('/reservations', function (req, res) {
+router.get('/reservations', function (req, res) {
     res.sendFile(path.join(__dirname, 'reservations.html'));
 });
 
-app.post('/api/reservations', function (req, res) {
+router.post('/api/reservations', function (req, res) {
     let reservation = req.body;
 
     console.log(req.body);
     res.json(reservation);
 });
 
-app.listen(PORT, () => {
+router.listen(PORT, () => {
     console.log('App listening on PORT ' + PORT);
 });

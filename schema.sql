@@ -10,3 +10,11 @@ CREATE TABLE `reservation` (
   `unique_id` int(5) NOT NULL,
   PRIMARY KEY (`reservation_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+use reservation;
+CREATE TABLE `waitlist` (
+  `waitlist_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `phone_number` int(10) NOT NULL,
+  PRIMARY KEY (`waitlist_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;

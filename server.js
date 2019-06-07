@@ -17,16 +17,16 @@ function handleRequest(request, response) {
 
     switch (path) {
 
-        case "/list-tables":
-            return fs.readFile(__dirname + "/list-tables.html", function (err, data) {
+        case "/tables":
+            return fs.readFile(__dirname + "/tables.html", function (err, data) {
                 response.writeHead(200, {
                     "Content-Type": "text/html"
                 });
                 response.end(data);
             });
 
-        case "/reserve":
-            return fs.readFile(__dirname + "/reserve.html", function (err, data) {
+        case "/reservations":
+            return fs.readFile(__dirname + "/reservations.html", function (err, data) {
                 response.writeHead(200, {
                     "Content-Type": "text/html"
                 });

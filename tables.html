@@ -25,7 +25,7 @@
     <!-- App CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Home - Reservations</title>
+    <title>Tables - Restaurant Reservations</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
@@ -42,11 +42,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tables">Tables</a>
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/tables">Tables <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/reservations">Reservations</a>
@@ -59,7 +59,49 @@
         <div class="row">
             <div class="col-12">
                 <h1>Hot Restaurant</h1>
-                <p>We only have <span id="tables-left">5</span>! Book your seat before they all are gone!</p>
+                <p>Current Reservations and Waiting List</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-12">
+                <h3>Current Reservations</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="reservations">
+                    <div class="card">
+                        <div class=" card-body">
+                            <h5 class="card-title">Barack Obama</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">id: 1</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-12">
+                <h3>Waitlist</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="waitlist">
+                    <div class="card">
+                        <div class=" card-body">
+                            <h5 class="card-title">Elon Musk</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">id: 5</h6>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

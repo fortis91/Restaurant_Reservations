@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS reservation;
-CREATE DATABASE reservation;
+DROP DATABASE IF EXISTS restaurant;
+CREATE DATABASE restaurant;
 
 use reservation;
 CREATE TABLE `reservation` (
